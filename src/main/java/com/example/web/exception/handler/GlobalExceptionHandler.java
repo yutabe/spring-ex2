@@ -42,6 +42,8 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     public ErrorResponse handleHttpMessageNotReadable(HttpMessageNotReadableException exception) {
         ErrorResponse errorResponse = new ErrorResponse("リクエストボディの解析に失敗");
+        errorResponse.addDetail("requestBody", exception.getMessage());
+
         return errorResponse;
     }
 

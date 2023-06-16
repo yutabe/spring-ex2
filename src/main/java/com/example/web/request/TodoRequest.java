@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.PastOrPresent;
 import jakarta.validation.constraints.Size;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 public class TodoRequest {
 
@@ -14,18 +14,9 @@ public class TodoRequest {
 
     @NotBlank
     @PastOrPresent
-    private LocalDateTime deadline;
+    private LocalDate deadline;
 
-    @NotBlank
     private Boolean done;
-
-    @NotBlank
-    @PastOrPresent
-    private LocalDateTime createdAt;
-
-    @NotBlank
-    @PastOrPresent
-    private LocalDateTime updatedAt;
 
     public String getDescription() {
         return description;
@@ -35,11 +26,11 @@ public class TodoRequest {
         this.description = description;
     }
 
-    public LocalDateTime getDeadline() {
+    public LocalDate getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(LocalDateTime deadline) {
+    public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
 
@@ -50,23 +41,6 @@ public class TodoRequest {
     public void setDone(Boolean done) {
         this.done = done;
     }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public LocalDateTime getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(LocalDateTime updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
 
 //    @AssertTrue
 //    public boolean isJoinedDateGreaterThanBirthDay() {

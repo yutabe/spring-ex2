@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import java.net.URI;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -64,8 +65,8 @@ public class TodoRestController {
         todo.setDescription(request.getDescription());
         todo.setDeadline(request.getDeadline());
         todo.setDone(request.getDone());
-        todo.setCreatedAt(request.getCreatedAt());
-        todo.setUpdatedAt(request.getUpdatedAt());
+        todo.setCreatedAt(LocalDateTime.now());
+        todo.setUpdatedAt(LocalDateTime.now());
         todoService.update(todo);
     }
 
@@ -74,9 +75,9 @@ public class TodoRestController {
         Todo todo = new Todo();
         todo.setDescription(request.getDescription());
         todo.setDeadline(request.getDeadline());
-        todo.setDone(request.getDone());
-        todo.setCreatedAt(request.getCreatedAt());
-        todo.setUpdatedAt(request.getUpdatedAt());
+        todo.setDone(false);
+        todo.setCreatedAt(LocalDateTime.now());
+        todo.setUpdatedAt(LocalDateTime.now());
         todoService.insert(todo);
 
         // http://localhost:8080/employees

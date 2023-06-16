@@ -1,5 +1,6 @@
 package com.example.web.response;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TodoResponse {
@@ -8,7 +9,7 @@ public class TodoResponse {
 
     private String description;
 
-    private LocalDateTime deadline;
+    private LocalDate deadline;
 
     private Boolean done;
 
@@ -16,7 +17,7 @@ public class TodoResponse {
 
     private LocalDateTime updatedAt;
 
-    public TodoResponse(Integer id, String description, LocalDateTime deadline, Boolean done, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public TodoResponse(Integer id, String description, LocalDate deadline, Boolean done, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.description = description;
         this.deadline = deadline;
@@ -33,7 +34,7 @@ public class TodoResponse {
         return description;
     }
 
-    public LocalDateTime getDeadline() {
+    public LocalDate getDeadline() {
         return deadline;
     }
 

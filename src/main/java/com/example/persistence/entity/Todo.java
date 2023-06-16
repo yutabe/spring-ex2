@@ -1,5 +1,6 @@
 package com.example.persistence.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
@@ -9,7 +10,7 @@ public class Todo {
 
     private String description;
 
-    private LocalDateTime deadline;
+    private LocalDate deadline;
 
     private Boolean done;
 
@@ -21,7 +22,7 @@ public class Todo {
 
     }
 
-    public Todo(Integer id, String description, LocalDateTime deadline, Boolean done, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Todo(Integer id, String description, LocalDate deadline, Boolean done, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.description = description;
         this.deadline = deadline;
@@ -46,11 +47,11 @@ public class Todo {
     	this.description = description;
     }
 
-    public LocalDateTime getDeadline() {
+    public LocalDate getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(LocalDateTime deadline) {
+    public void setDeadline(LocalDate deadline) {
     	this.deadline = deadline;
     }
 
